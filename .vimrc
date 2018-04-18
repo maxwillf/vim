@@ -6,6 +6,7 @@ Plug 'itchyny/vim-haskell-indent'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-surround'
 call plug#end()
 
 nmap <S-Tab> :NERDTreeToggle<CR>
