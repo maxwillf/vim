@@ -20,8 +20,6 @@ nnoremap <leader>bb :buffers<CR>:b<SPACE>
 " going to .vimrc
 nnoremap <leader>fd :w<CR>:e<SPACE>~/.vimrc<CR>
 
-inoremap jk <esc>
-
 set foldmethod=marker
 colorscheme delek
 syntax on
