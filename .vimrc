@@ -12,12 +12,13 @@ nnoremap sh :set filetype=sh<CR>i
 nmap <S-Tab> :NERDTreeToggle<CR>
 "compiler mapping
 nnoremap <F5> :!g++ -std=c++11 %:t -o %:t:r <CR>
+let mapleader = "\<SPACE>"
 "space-like way of changing splits
-nnoremap <SPACE>w <C-w>
+nnoremap <leader>w <C-w>
 " space-like way of changing buffers
-nnoremap <SPACE>bb :buffers<CR>:b<SPACE>
+nnoremap <leader>bb :buffers<CR>:b<SPACE>
 " space-like way of going to .vimrc
-nnoremap <SPACE>fd :w<CR>:e<SPACE>~/.vimrc<CR>
+nnoremap <leader>fd :w<CR>:e<SPACE>~/.vimrc<CR>
 
 set foldmethod=marker
 colorscheme delek
