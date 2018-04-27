@@ -6,8 +6,13 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'whatyouhide/vim-lengthmatters'
 Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
-
+" terminal colours
+set t_Co=256
+let g:airline_theme = 'base16_spacemacs'
+"airline tab for the upper left corner of the screen
+let g:airline#extensions#tabline#enabled = 1
 nnoremap sh :set filetype=sh<CR>i
 nmap <S-Tab> :NERDTreeToggle<CR>
 "compiler mapping
@@ -24,8 +29,6 @@ set foldmethod=marker
 colorscheme delek
 syntax on
 filetype plugin indent on
-"airline tab for the upper left corner of the screen
-let g:airline#extensions#tabline#enabled = 1
 let g:indentLine_char = '¦'
 set tabstop=4
 set softtabstop=0 noexpandtab
