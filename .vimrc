@@ -7,12 +7,19 @@ Plug 'whatyouhide/vim-lengthmatters'
 Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'felixhummel/setcolors.vim'
+Plug 'yuttie/hydrangea-vim'
 call plug#end()
-" terminal colours
-set t_Co=256
-let g:airline_theme = 'base16_spacemacs'
+" aesthetic configs ************************************************************
+colorscheme hydrangea
+set background=dark
+set termguicolors
+let g:airline_theme = 'deus'
 "airline tab for the upper left corner of the screen
 let g:airline#extensions#tabline#enabled = 1
+
+" ***************************************************************************
+
 nnoremap sh :set filetype=sh<CR>i
 nmap <S-Tab> :NERDTreeToggle<CR>
 "compiler mapping
@@ -26,10 +33,8 @@ nnoremap <leader>bb :buffers<CR>:b<SPACE>
 nnoremap <leader>fd :w<CR>:e<SPACE>~/.vimrc<CR>
 
 set foldmethod=marker
-colorscheme delek
 syntax on
 filetype plugin indent on
-let g:indentLine_char = '¦'
 set tabstop=4
 set softtabstop=0 noexpandtab
 sign unplace *
