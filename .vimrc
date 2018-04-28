@@ -7,14 +7,17 @@ Plug 'whatyouhide/vim-lengthmatters'
 Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'felixhummel/setcolors.vim'
 Plug 'yuttie/hydrangea-vim'
+Plug 'flazz/vim-colorschemes'
+
 call plug#end()
 " aesthetic configs ************************************************************
-colorscheme hydrangea
+colorscheme neonwave
+"colorscheme hydrangea
 set background=dark
 set termguicolors
-let g:airline_theme = 'deus'
+let g:airline_theme = 'monochrome'
+"let g:airline_theme = 'deus'
 "airline tab for the upper left corner of the screen
 let g:airline#extensions#tabline#enabled = 1
 
