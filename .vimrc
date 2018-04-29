@@ -19,7 +19,7 @@ function! AdaptColorscheme()
 "    highlight clear CursorLine
 "    This is the only change i need for term_transparency with 
 "    termguicolors on
-    highlight Normal guibg=NONE
+    highlight Normal guibg=NONE ctermbg=NONE
    " highlight LineNr ctermbg=none
    " highlight Folded ctermbg=none
    " highlight NonText ctermbg=none
@@ -31,10 +31,9 @@ autocmd ColorScheme * call AdaptColorscheme()
 
 colorscheme neonwave
 "colorscheme hydrangea
-"set background=dark
+set background=dark
 set termguicolors
 let g:airline_theme = 'monochrome'
-hi Normal guibg=NONE ctermbg=NONE
 "let g:airline_theme = 'deus'
 "airline tab for the upper left corner of the screen
 let g:airline#extensions#tabline#enabled = 1
@@ -52,7 +51,8 @@ nnoremap <leader>w <C-w>
 nnoremap <leader>bb :buffers<CR>:b<SPACE>
 " going to .vimrc
 nnoremap <leader>fd :w<CR>:e<SPACE>~/.vimrc<CR>
-
+"sourcing .vimrc mnemonic to source dotfile
+nnoremap <leader>sd :source $MYVIMRC<CR>
 set foldmethod=marker
 syntax on
 filetype plugin indent on
@@ -64,5 +64,3 @@ set shiftwidth=4
 set showmode
 set autoindent
 set textwidth=80
-
-
