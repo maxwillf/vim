@@ -3,12 +3,13 @@ Plug 'itchyny/vim-haskell-indent'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'whatyouhide/vim-lengthmatters'
+"Plug 'whatyouhide/vim-lengthmatters'
 Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'yuttie/hydrangea-vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'ajh17/VimCompletesMe'
 
 call plug#end()
 
@@ -16,19 +17,17 @@ call plug#end()
 " aesthetic configs ************************************************************
 
 function! AdaptColorscheme()
-"    highlight clear CursorLine
 "    This is the only change i need for term_transparency with 
 "    termguicolors on
     highlight Normal guibg=NONE ctermbg=NONE
-   " highlight LineNr ctermbg=none
-   " highlight Folded ctermbg=none
-   " highlight NonText ctermbg=none
-   " highlight SpecialKey ctermbg=none
-   " highlight VertSplit ctermbg=none
-   " highlight SignColumn ctermbg=none
 endfunction
 autocmd ColorScheme * call AdaptColorscheme()
 
+" Fuzzy file-finding config
+" ************************
+set path+=**
+set wildmenu
+"*************************
 colorscheme neonwave
 "colorscheme hydrangea
 set background=dark
@@ -41,7 +40,7 @@ let g:airline#extensions#tabline#enabled = 1
 " ***************************************************************************
 
 nnoremap sh :set filetype=sh<CR>i
-nmap <S-Tab> :NERDTreeToggle<CR>
+nmap <F8> :NERDTreeToggle<CR>
 "compiler mapping
 nnoremap <F5> :!g++ -std=c++11 %:t -o %:t:r <CR>
 let mapleader = "\<SPACE>"
@@ -64,3 +63,5 @@ set shiftwidth=4
 set showmode
 set autoindent
 set textwidth=80
+set clipboard=unnamed
+let g:UltiSnipsExpandTrigger = '<S-Tab>'
