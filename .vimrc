@@ -42,12 +42,17 @@ let g:airline#extensions#tabline#enabled = 1
 nnoremap sh :set filetype=sh<CR>i
 nmap <F8> :NERDTreeToggle<CR>
 "compiler mapping
-nnoremap <F5> :!g++ -std=c++11 %:t -o %:t:r <CR>
+augroup compiler_group
+	autocmd FileType cpp nnoremap <F5> :!g++ -std=c++11 %:t -o %:t:r <CR>
+	autocmd FileType c nnoremap <F5> :!gcc %:t -o %:t:r <CR>
+	autocmd FileType python nnoremap <F5> :!python3 %:t<CR>
 let mapleader = "\<SPACE>"
 "changing splits
 nnoremap <leader>w <C-w>
 " changing buffers
 nnoremap <leader>bb :buffers<CR>:b<SPACE>
+nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bn :bn<CR>
 " going to .vimrc
 nnoremap <leader>fd :w<CR>:e<SPACE>~/.vimrc<CR>
 "sourcing .vimrc mnemonic to source dotfile
