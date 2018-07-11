@@ -39,14 +39,22 @@ let g:airline#extensions#tabline#enabled = 1
 
 " ***************************************************************************
 
+function! HaskellCleanup()
+	call delete(expand('%:p:r') . ".o")
+	call delete(expand('%:p:r') . ".hi")
+	call delete(expand('%:p:r'))
+endfunction
+
 nnoremap sh :set filetype=sh<CR>i
 nmap <F8> :NERDTreeToggle<CR>
 "compiler mapping
 augroup compiler_group
 	autocmd!	
-	autocmd FileType cpp nnoremap <F5> :!g++ -std=c++11 %:t -o %:t:r <CR>
+	autocmd FileType cpp nnoremap <F5> :!g++ -W -g -std=c++11 %:t -o %:t:r <CR>
 	autocmd FileType c nnoremap <F5> :!gcc %:t -o %:t:r <CR>
 	autocmd FileType python nnoremap <F5> :!python3 %:t<CR>
+	autocmd FileType haskell nnoremap <F5> :!ghc --make %:p<CR>
+	autocmd FileType haskell nnoremap <F6> :call HaskellCleanup()<CR>
 augroup END
 
 
