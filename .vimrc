@@ -50,9 +50,9 @@ nmap <F8> :NERDTreeToggle<CR>
 "compiler mapping
 augroup compiler_group
 	autocmd!	
-	autocmd FileType cpp nnoremap <F5> :!g++ -W -g -std=c++11 %:t -o %:t:r <CR>
-	autocmd FileType c nnoremap <F5> :!gcc %:t -o %:t:r <CR>
-	autocmd FileType python nnoremap <F5> :!python3 %:t<CR>
+	autocmd FileType cpp nnoremap <F5> :!g++ -W -g -std=c++11 %:p -o %:p:r <CR>
+	autocmd FileType c nnoremap <F5> :!gcc %:p -o %:p:r <CR>
+	autocmd FileType python nnoremap <F5> :!python3 %:p<CR>
 	autocmd FileType haskell nnoremap <F5> :!ghc --make %:p<CR>
 	autocmd FileType haskell nnoremap <F6> :call HaskellCleanup()<CR>
 augroup END
