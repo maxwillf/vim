@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-surround'
 Plug 'itchyny/vim-haskell-indent'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
