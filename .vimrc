@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'yuttie/hydrangea-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'ajh17/VimCompletesMe'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
