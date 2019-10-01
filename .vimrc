@@ -33,7 +33,12 @@ set wildmenu
 colorscheme neonwave
 "colorscheme hydrangea
 set background=dark
-set termguicolors
+
+" only set termguicolors if has a capable env
+if has('termguicolors')
+    set termguicolors
+endif
+
 let g:airline_theme = 'monochrome'
 "let g:airline_theme = 'deus'
 "airline tab for the upper left corner of the screen
@@ -58,7 +63,6 @@ augroup compiler_group
 	autocmd FileType haskell nnoremap <F5> :!ghc --make %:p<CR>
 	autocmd FileType haskell nnoremap <F6> :call HaskellCleanup()<CR>
 augroup END
-
 
 let mapleader = "\<SPACE>"
 "changing splits
